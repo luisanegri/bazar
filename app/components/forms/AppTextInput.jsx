@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextInput, View, StyleSheet } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import defaultStyles from '../styles/globalStyles';
+import defaultStyles from '../../styles/globalStyles';
 
 function AppTextInput({ icon, ...otherProps }) {
   return (

@@ -15,10 +15,7 @@ function AppFormField({ name, ...otherProps }) {
         onBlur={() => setFieldTouched(name)}
         {...otherProps}
       />
-      <ErrorMessage
-        error={errors[name]}
-        //   visible={touched[name]}
-      />
+      <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
   );
 }
