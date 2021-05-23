@@ -8,6 +8,7 @@ import AppTextInput from '../components/AppTextInput';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import ErrorMessage from '../components/ErrorMessage';
+import AppFormField from '../components/AppFormField';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
@@ -24,32 +25,31 @@ function LoginScreen() {
         validationSchema={validationSchema}
       >
         {/* Keep track of form state and submit it */}
-        {({ handleChange, handleSubmit, errors }) => (
-          <>
-            <AppTextInput
-              placeholder="Email"
-              icon="email"
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="email-address"
-              textContentType="emailAddress" // only for ios
-              onChangeText={handleChange('email')}
-            />
-            <ErrorMessage error={errors.email} />
-            <AppTextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="lock"
-              placeholder="Password"
-              textContentType="password"
-              secureTextEntry
-              onChangeText={handleChange('password')}
-            />
-
-            <ErrorMessage error={errors.password} />
-            <AppButton title="Login" onPress={handleSubmit} />
-          </>
-        )}
+        {({ handleSubmit }) => {
+          return (
+            <>
+              <AppFormField
+                placeholder="Email"
+                icon="email"
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+                textContentType="emailAddress" // only for ios
+                name="email"
+              />
+              <AppFormField
+                autoCapitalize="none"
+                autoCorrect={false}
+                icon="lock"
+                placeholder="Password"
+                textContentType="password"
+                secureTextEntry
+                name="password"
+              />
+              <AppButton title="Login" onPress={handleSubmit} />
+            </>
+          );
+        }}
       </Formik>
     </Screen>
   );

@@ -5,6 +5,7 @@ import AppText from './AppText';
 import defaultStyles from '../styles/globalStyles';
 
 function ErrorMessage({ error }) {
+  //   if (!visible || !error) return null;
   if (!error) return null;
   return <AppText style={styles.error}>{error}</AppText>;
 }
