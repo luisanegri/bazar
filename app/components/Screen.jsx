@@ -10,5 +10,6 @@ const styles = StyleSheet.create({
     // SafeAreaView only works for ios, use the value of Constants.statusBarHeight
     // to apply a padding top for android
     paddingTop: Constants.statusBarHeight,
+    flex: 1,
   },
 });
