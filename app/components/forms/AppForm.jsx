@@ -2,7 +2,6 @@ import React from 'react';
 import { Formik } from 'formik';
 
 function AppForm({ initialValues, onSubmit, validationSchema, children }) {
-  console.log('children', children);
   return (
     <Formik
       initialValues={initialValues}
