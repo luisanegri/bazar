@@ -5,7 +5,8 @@ import AppButton from '../components/AppButton';
 
 import colors from '../styles/colors';
 
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
+  // console.log(navigation.navigate);
   return (
     <ImageBackground
       style={styles.background}
@@ -17,8 +18,12 @@ function WelcomeScreen() {
         <Text style={styles.tagline}>Sell what you don't need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="Login" />
-        <AppButton title="Register" color="secondary" />
+        <AppButton title="Login" onPress={() => navigation.navigate('Login')} />
+        <AppButton
+          title="Register"
+          color="secondary"
+          onPress={() => navigation.navigate('Register')}
+        />
       </View>
     </ImageBackground>
   );
